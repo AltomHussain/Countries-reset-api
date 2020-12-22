@@ -7,12 +7,12 @@ export default function DisplayCountries({ countryInfo }) {
 
   function handleSearch(e) {
    
-    setSearchInput(e.target.value);
+    setSearchInput(e.target.value.toLowerCase());
   }
   let filteredCountry = countryInfo.filter(
     (country) =>
-      country.name.indexOf(searchInput) !== -1 &&
-      country.capital.indexOf(searchInput) !== -1
+      country.name.toLowerCase().indexOf(searchInput) !== -1 &&
+      country.capital.toLowerCase().indexOf(searchInput) !== -1
   );
   return (
     <div>
