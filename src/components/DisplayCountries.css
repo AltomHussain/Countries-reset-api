@@ -1,0 +1,13 @@
+/* style="width: 18rem;" */
+.containter {
+  background-color: lightcyan;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 10px;
+  margin-bottom: 7px;
+}
+
+.card{
+    margin-bottom: 7px;
+}

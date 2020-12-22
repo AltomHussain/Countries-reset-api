@@ -1,10 +1,11 @@
 
 import './App.css';
-
+import countryInfo from "./components/contriesData.json"
+import DisplayCountries from './components/DisplayCountries';
 function App() {
   return (
-    <div className="App">
-    Hello there
+    <div className="app">
+  <DisplayCountries countryInfo={countryInfo}/>
     </div>
   );
 }
