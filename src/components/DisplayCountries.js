@@ -6,7 +6,6 @@ export default function DisplayCountries({ countryInfo }) {
   const [searchInput, setSearchInput] = useState([]);
 
   function handleSearch(e) {
-   
     setSearchInput(e.target.value.toLowerCase());
   }
   let filteredCountry = countryInfo.filter(
@@ -16,7 +15,11 @@ export default function DisplayCountries({ countryInfo }) {
   );
   return (
     <div>
-      <SearchBar handleSearch={handleSearch} />
+      <SearchBar
+        handleSearch={handleSearch}
+        filteredCountry={filteredCountry}
+        countryInfo={countryInfo}
+      />
       <div className="containter">
         {filteredCountry.map((country, index) => {
           return (
