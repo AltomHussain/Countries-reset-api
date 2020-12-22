@@ -4,7 +4,7 @@ import countryInfo from "./components/contriesData.json"
 import DisplayCountries from './components/DisplayCountries';
 function App() {
   return (
-    <div className="App">
+    <div className="app">
   <DisplayCountries countryInfo={countryInfo}/>
     </div>
   );
