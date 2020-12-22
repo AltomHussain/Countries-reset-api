@@ -1,14 +1,17 @@
 import React from 'react'
-
+import "./DisplayCountries.css";
 export default function SearchBar({ handleSearch, countryInfo, filteredCountry }) {
   return (
-    <div>
-      <p>{`Show ${filteredCountry.length}/ ${countryInfo.length} countries`}</p>
-      <input
-        type="text"
-        placeholder="Search for a country"
-        onChange={handleSearch}
-      />
+    <div className="main-container">
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search for a country"
+          onChange={handleSearch}
+          className="search-input"
+        />
+        <p className="display-number">{`Show ${filteredCountry.length}/ ${countryInfo.length} countries`}</p>
+      </div>
     </div>
   );
 }
