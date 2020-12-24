@@ -2,38 +2,56 @@ import React, { useState } from "react";
 import "./DisplayCountries.css";
 import "../App.css";
 import SearchBar from "./SearchBar";
+import SelectRegion from "./SelectRegion";
 export default function DisplayCountries({ countryInfo }) {
   const [searchInput, setSearchInput] = useState([]);
-
+  const [selectRegion, setSelectRegion] = useState([]);
   function handleSearch(e) {
     setSearchInput(e.target.value.toLowerCase());
   }
   let filteredCountry = countryInfo.filter(
-    (country) =>
-      country.name.toLowerCase().indexOf(searchInput) !== -1 &&
-      country.capital.toLowerCase().indexOf(searchInput) !== -1
+    (country) => country.name.toLowerCase().indexOf(searchInput) !== -1
   );
+
+  let filterRegion;
+  function handleSelect(e) {
+    setSelectRegion(e.target.value);
+  }
+  filterRegion = countryInfo.filter((p) => p.region.includes(selectRegion));
+  console.log(filterRegion);
+
+  function mappingResult(filteredCountry) {
+    return filteredCountry.map((country, index) => {
+      return (
+        <div key={index} className="card ">
+          <img src={country.flag} className="card-img-top" alt="..." />
+          <div className="card-body">
+            <h5 className="card-title">{country.name}</h5>
+            <p className="card-text">{`Population: ${country.population}`}</p>
+            <p className="card-text">{`Region: ${country.region}`}</p>
+            <p className="card-text">{`Capital: ${country.capital}`}</p>
+          </div>
+        </div>
+      );
+    });
+  }
+
   return (
     <div>
+      <SelectRegion
+        countryInfo={countryInfo}
+        filteredCountry={filteredCountry}
+        handleSelect={handleSelect}
+      />
       <SearchBar
         handleSearch={handleSearch}
         filteredCountry={filteredCountry}
         countryInfo={countryInfo}
       />
       <div className="containter">
-        {filteredCountry.map((country, index) => {
-          return (
-            <div key={index} className="card ">
-              <img src={country.flag} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">{country.name}</h5>
-                <p className="card-text">{`Population: ${country.population}`}</p>
-                <p className="card-text">{`Region: ${country.region}`}</p>
-                <p className="card-text">{`Capital: ${country.capital}`}</p>
-              </div>
-            </div>
-          );
-        })}
+        {searchInput
+          ? mappingResult(filteredCountry)
+          : mappingResult(filterRegion)}
       </div>
     </div>
   );
