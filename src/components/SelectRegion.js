@@ -1,18 +1,21 @@
-import { logDOM , useState} from "@testing-library/react";
+import { logDOM, useState } from "@testing-library/react";
 import React from "react";
 
-export default function SelectRegion({ mappingResult,filteredCountry, setSelectRegion }) {
+export default function SelectRegion({
+  mappingResult,
+  filteredCountry,
+  setSelectRegion,
+}) {
+  function handleSelect(e) {
+    const selectedValues = e.target.value;
 
-    function handleSelect(e) {
-    const selectedValues= e.target.value
-        setSelectRegion(selectedValues);
-      }
-
-
+    setSelectRegion(selectedValues);
+    console.log("keep trying");
+  }
 
   return (
     <div>
-      <select onChange={(e)=> handleSelect(e)}>
+      <select onChange={(e) => handleSelect(e)}>
         <option value="Select all">Select all</option>
         <option value="Asia">Asia</option>
         <option value="Europe">Europe</option>
@@ -21,6 +24,4 @@ export default function SelectRegion({ mappingResult,filteredCountry, setSelectR
       </select>
     </div>
   );
-  
-
 }
