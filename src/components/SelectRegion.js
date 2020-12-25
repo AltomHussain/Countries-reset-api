@@ -1,21 +1,26 @@
-import { logDOM } from "@testing-library/react";
+import { logDOM , useState} from "@testing-library/react";
 import React from "react";
 
-export default function SelectRegion({ countryInfo, handleSelect }) {
-//   console.log(countryInfo.filter((p) => p.region.includes("Africa")));
-  function handleChange (e){
-    console.log(countryInfo.filter((p) =>p.name== p.region.includes(e.target.value)));
+export default function SelectRegion({ mappingResult,filteredCountry, setSelectRegion }) {
 
-  }
+    function handleSelect(e) {
+    const selectedValues= e.target.value
+        setSelectRegion(selectedValues);
+      }
+
+
+
   return (
     <div>
       <select onChange={(e)=> handleSelect(e)}>
-        <option>Select all</option>
-        <option>Asia</option>
-        <option>Europe</option>
-        <option>Africa</option>
-        <option>Americas</option>
+        <option value="Select all">Select all</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas"> Americas</option>
       </select>
     </div>
   );
+  
+
 }

@@ -6,19 +6,15 @@ import SelectRegion from "./SelectRegion";
 export default function DisplayCountries({ countryInfo }) {
   const [searchInput, setSearchInput] = useState([]);
   const [selectRegion, setSelectRegion] = useState([]);
-  function handleSearch(e) {
+
+  function handleSearch(e ) {
     setSearchInput(e.target.value.toLowerCase());
   }
+
   let filteredCountry = countryInfo.filter(
     (country) => country.name.toLowerCase().indexOf(searchInput) !== -1
-  );
-
-  let filterRegion;
-  function handleSelect(e) {
-    setSelectRegion(e.target.value);
-  }
-  filterRegion = countryInfo.filter((p) => p.region.includes(selectRegion));
-  console.log(filterRegion);
+    );
+   let filteredRegion = filteredCountry.filter((p) => p.region.includes(selectRegion));
 
   function mappingResult(filteredCountry) {
     return filteredCountry.map((country, index) => {
@@ -35,13 +31,13 @@ export default function DisplayCountries({ countryInfo }) {
       );
     });
   }
-
+ 
   return (
     <div>
       <SelectRegion
-        countryInfo={countryInfo}
-        filteredCountry={filteredCountry}
-        handleSelect={handleSelect}
+      setSelectRegion={setSelectRegion}
+      mappingResult={mappingResult}
+      filteredCountry={filteredCountry}
       />
       <SearchBar
         handleSearch={handleSearch}
@@ -49,13 +45,11 @@ export default function DisplayCountries({ countryInfo }) {
         countryInfo={countryInfo}
       />
       <div className="containter">
-        {searchInput
-          ? mappingResult(filteredCountry)
-          : mappingResult(filterRegion)}
+        {selectRegion 
+          ?mappingResult(filteredRegion) 
+          :mappingResult(filteredCountry) }
       </div>
     </div>
   );
 }
-// population
-// region
-// capital
+
