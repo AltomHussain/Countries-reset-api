@@ -4,8 +4,6 @@ import DisplayCountries from "./components/DisplayCountries";
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  Switch,
   BrowserRouter,
 } from "react-router-dom";
 import OneCountry from "./components/OneCountry";
@@ -15,16 +13,10 @@ function App() {
     <BrowserRouter>
       <Header />
       <Router>
-        {/* <Switch> */}
         <Route exact path="/">
           <DisplayCountries countryInfo={countryInfo} />
         </Route>
         <Route path="/countries/:name" children={<OneCountry />}></Route>
-        {/* <Route  path="/country" component={OneCountry} /> */}
-
-        {/* </Switch>   */}
-        {/* <div className="app">
-    </div> */}
       </Router>
     </BrowserRouter>
   );
