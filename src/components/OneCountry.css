@@ -1,0 +1,65 @@
+.one-country-coountainer{
+    padding: 20px;
+}
+.back-btn{
+    margin-bottom: 30px 0;
+}
+.one-country-coountainer article .country-details h2{
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+.one-country-coountainer article .country-details h5{
+    font-weight: 600;
+    margin: 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+
+
+}
+.one-country-coountainer article .country-details h5 span{
+    font-weight: 300;
+}
+.one-country-coountainer article  .borders h3{
+font-weight: 600;
+}
+.one-country-coountainer article  ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+.one-country-coountainer article  ul li{
+    margin:  10px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: pink;
+    padding: 3px 15px;
+    border-radius: 3px;
+    box-shadow: 0 5px 20px cyan;
+}
+
+@media (min-width: 992px){
+.one-country-coountainer article .country-inner{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.one-country-coountainer article .country-details{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   place-items: center;
+}
+}
+@media (min-width: 1200px ){
+    .one-country-coountainer{
+        max-width: 1100px;
+        margin: auto;
+    }
+}
+@media (min-width: 1440p){
+    .one-country-coountainer{
+      max-width: 1400px;
+    }
+}
