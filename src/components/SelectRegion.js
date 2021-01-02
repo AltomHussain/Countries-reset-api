@@ -14,7 +14,6 @@ export default function SelectRegion({
   }
 
   return (
-    <div>
       <select onChange={(e) => handleSelect(e)}>
         <option value="Select all">Select all</option>
         <option value="Asia">Asia</option>
@@ -22,6 +21,5 @@ export default function SelectRegion({
         <option value="Africa">Africa</option>
         <option value="Americas"> Americas</option>
       </select>
-    </div>
   );
 }
