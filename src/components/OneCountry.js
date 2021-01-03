@@ -38,7 +38,7 @@ export default function OneCountry() {
             <article key={numericCode} className="main-country">
              <div className="country-inner">
              <div className="flag">
-                <img src={flag} alt={`${name}'s flag`} />
+                <img className="country-img" src={flag} alt={`${name}'s flag`} />
               </div>
               <div className="country-details">
                 <div>
@@ -60,6 +60,7 @@ export default function OneCountry() {
                     Capital: <span>{capital}</span>
                   </h5>
                 </div>
+
                 <div>
                   <h5>
                     Top Level Domain: <span>{topLevelDomain}</span>
@@ -73,6 +74,7 @@ export default function OneCountry() {
                 </div>
               </div>
              </div>
+
               <div className="borders">
                 <h3>Border Countries: </h3>
                 <ul>

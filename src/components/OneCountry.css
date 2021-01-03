@@ -4,6 +4,10 @@
 .back-btn{
     margin-bottom: 30px 0;
 }
+.country-details{
+    background-color: green;
+    margin-left: -30px;
+}
 .one-country-coountainer article .country-details h2{
     font-weight: 600;
     font-size: 24px;
@@ -17,18 +21,26 @@
 
 
 }
+.flag{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 .one-country-coountainer article .country-details h5 span{
     font-weight: 300;
 }
 .one-country-coountainer article  .borders h3{
 font-weight: 600;
+margin: 4px;
+padding: 10px 0px 10px 36px;
 }
 .one-country-coountainer article  ul{
   display: flex;
   flex-wrap: wrap;
 }
 .one-country-coountainer article  ul li{
-    margin:  10px;
+    margin:  3px;
     display: flex;
     flex-wrap: wrap;
     background-color: pink;
@@ -36,7 +48,17 @@ font-weight: 600;
     border-radius: 3px;
     box-shadow: 0 5px 20px cyan;
 }
+.country-img{
+    max-width: 350px;
+}
 
+.borders{
+    width: 500px;
+    background-color: red;
+   float: right;
+   margin-right: 50px;
+   margin-top: 10px;
+}
 @media (min-width: 992px){
 .one-country-coountainer article .country-inner{
     /* display: flex;
@@ -52,6 +74,7 @@ font-weight: 600;
    place-items: center;
 }
 }
+
 @media (min-width: 1200px ){
     .one-country-coountainer{
         max-width: 1100px;
