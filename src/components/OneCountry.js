@@ -17,7 +17,10 @@ export default function OneCountry() {
     <>
       <section className="one-country-coountainer">
         <Link to="/" className="back-btn">
-          Back Home
+        <button type="button" class="btn btn-secondary back-home">
+                  {" "}
+                 Back home
+                </button>
         </Link>
         {country.map((country) => {
           const {
@@ -38,11 +41,11 @@ export default function OneCountry() {
             <article key={numericCode} className="main-country">
              <div className="country-inner">
              <div className="flag">
-                <img src={flag} alt={`${name}'s flag`} />
+                <img className="country-img" src={flag} alt={`${name}'s flag`} />
               </div>
               <div className="country-details">
                 <div>
-                  <h2>{name}</h2>
+                  <h2 className="country-name">{name}</h2>
                   <h5>
                     Native Name: <span>{nativeName}</span>
                   </h5>
@@ -60,6 +63,7 @@ export default function OneCountry() {
                     Capital: <span>{capital}</span>
                   </h5>
                 </div>
+
                 <div>
                   <h5>
                     Top Level Domain: <span>{topLevelDomain}</span>
@@ -73,6 +77,7 @@ export default function OneCountry() {
                 </div>
               </div>
              </div>
+
               <div className="borders">
                 <h3>Border Countries: </h3>
                 <ul>
