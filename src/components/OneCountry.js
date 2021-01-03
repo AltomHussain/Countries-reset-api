@@ -17,7 +17,10 @@ export default function OneCountry() {
     <>
       <section className="one-country-coountainer">
         <Link to="/" className="back-btn">
-          Back Home
+        <button type="button" class="btn btn-secondary back-home">
+                  {" "}
+                 Back home
+                </button>
         </Link>
         {country.map((country) => {
           const {
@@ -42,7 +45,7 @@ export default function OneCountry() {
               </div>
               <div className="country-details">
                 <div>
-                  <h2>{name}</h2>
+                  <h2 className="country-name">{name}</h2>
                   <h5>
                     Native Name: <span>{nativeName}</span>
                   </h5>

@@ -5,7 +5,6 @@
     margin-bottom: 30px 0;
 }
 .country-details{
-    background-color: green;
     margin-left: -30px;
 }
 .one-country-coountainer article .country-details h2{
@@ -46,7 +45,8 @@ padding: 10px 0px 10px 36px;
     background-color: pink;
     padding: 3px 15px;
     border-radius: 3px;
-    box-shadow: 0 5px 20px cyan;
+    /* box-shadow: 0 5px 20px cyan; */
+    box-shadow: 3px 5px 5px #888888;
 }
 .country-img{
     max-width: 350px;
@@ -54,10 +54,20 @@ padding: 10px 0px 10px 36px;
 
 .borders{
     width: 500px;
-    background-color: red;
    float: right;
    margin-right: 50px;
-   margin-top: 10px;
+   margin-top: 8px;
+}
+.country-name{
+    background-color: #888888;
+    padding: 5px;
+    color: white;
+    margin-right: 30px;
+    border-radius: 4px;
+}
+.back-home{
+    margin-left: 130px;
+    margin-bottom: 10px;
 }
 @media (min-width: 992px){
 .one-country-coountainer article .country-inner{
@@ -84,5 +94,25 @@ padding: 10px 0px 10px 36px;
 @media (min-width: 1440p){
     .one-country-coountainer{
       max-width: 1400px;
+    }
+}
+@media (max-width: 600px){
+    .flag{
+        display: block;
+        margin-left: 0px;
+        margin-right: 30px;
+        width: 50%;
+       margin-bottom: 20px;
+
+    }
+    .country-details{
+        margin: 0 auto;
+
+    }
+    .borders{
+        /* margin: 0 auto; */
+        margin: auto;
+        width: 100%;
+        padding: 10px;
     }
 }
